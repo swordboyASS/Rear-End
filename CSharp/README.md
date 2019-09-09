@@ -8,7 +8,7 @@
 
 #### :file_folder:[结构化异常处理](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.md)
 
-#### :file_folder:[接口]()
+#### :file_folder:[接口](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E6%8E%A5%E5%8F%A3.md)
 
 #### :file_folder:[集合与泛型](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E6%B3%9B%E5%9E%8B.%2Cmd)
 
