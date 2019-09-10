@@ -241,4 +241,98 @@ C#事件事实上会扩展为两个隐藏的公共方法，一个带add前缀，
 
 
 #### Lambda表达式
-Lambda表达式只是用更简单的方式来写`匿名方法`，彻底简化了对.NET委托类型的使用。
+Lambda表达式只是用更简单的方式来写`匿名方法`，彻底简化了对.NET委托类型的使用。  
+一些例子：
+1. 当你需要从一个集合中提取子集时，可以使用该方法，其原型如下：
+```csharp
+//System.Collections.Generic.List<T>类中的方法
+public List<T> FindAll（Predicate<T>match）//唯一参数
+```
+如你所见，该方法返回新的List<T>;
+  
+2. 在调用FindA11（）时，List<T>中的每一项都将传入Predicate<T>对象所指向的方法。方法在实现时将执行一些计算，来判断传入的数据是否符合标准，并返回true或false。如果返回true，该项将被添加到表示子集的新List<T>中（明白了吗）。
+
+```csharp
+//FindA11（）方法使用该委托提取子集
+public delegate bool Predicate<T>（T obj）；//该委托的参数是一个返回值为bool的排序方法；
+```
+
+一个完整的例子
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GIthub
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //TraditionShow();
+            //AnonymousShow()
+            LambdaShow();
+            Console.ReadLine();
+        }
+        //传统方法
+        static void  TraditionShow()
+        {
+            //创建整数列表
+            int[] array = { 1, 2, 3 ,45,67,78,6,8,10};
+            List<int> list = new List<int>();
+            list.AddRange(array); //参数是一个集合
+
+            //使用传统语法调用FindAll()
+            //Predicate返
+            Predicate<int> callback = new Predicate<int>(IsEvenNumber);//这个泛型委托需要一个返回值为bool型的比较函数作为参数，返回true则添加到callback里
+            Console.WriteLine(callback);
+            List<int> evenNumber = list.FindAll(callback);  //callback表示判断逻辑。
+            Console.WriteLine($"evenNumber的类型是：{evenNumber}");
+            Console.WriteLine("以下是偶数：");
+            foreach (var item in evenNumber)
+            {
+                Console.WriteLine(item);
+            }
+
+            bool IsEvenNumber(int i)
+            {
+               return(i% 2 == 0) ;
+            }
+        }
+        //匿名方法
+        static void AnonymousShow()
+        {
+            int[] array = { 1, 2, 3, 45, 67, 78, 6, 8, 10 };
+            List<int> list = new List<int>();
+            list.AddRange(array); //参数是一个集合
+
+            //使用匿名方法
+            List<int> evenNumber = list.FindAll(delegate (int i) { return (i % 2 == 0); });
+            foreach (var item in evenNumber)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        //Lambda方法
+        static void LambdaShow()
+        {
+            int[] array = { 1, 2, 3, 45, 67, 6, 8, 10 };
+            List<int> list = new List<int>();
+            list.AddRange(array); //参数是一个集合
+
+            //使用匿名方法
+            List<int> evenNumber = list.FindAll(i => (i % 2) == 0);
+            foreach (var item in evenNumber)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+
+
+```
+
+#### 理解Lambda表达式
