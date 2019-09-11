@@ -336,3 +336,40 @@ namespace GIthub
 ```
 
 #### 理解Lambda表达式
+编译器可以通过上下文推断，Lambda表达式推断参数类型（隐式类型），但是我们也可以显式的写出参数类型：
+```csharp
+//现在，我们显式定义参数的类型
+List<int>evenNumbers=list.FindAl1（（int i）=>（i%2）==0）;
+```
+#### 使用多个语句处理参数
+```csharp
+            //现在使用语句块编写Lambda表达式
+            List<int> evenNumbers = list.FindAll((i) =>
+            {
+                Console.WriteLine("value of i is currently:{0}", i);
+                bool isEven = ((i % 2) == 0);
+                return isEven;
+            });
+```
+
+#### 含有多个或0个参数的Lambda表达式
+```csharp
+      public delegate void MathMessage(string msg, int result); //2个参数
+      
+      public void SetMathHandler(MathMessage target)  
+      {mDelegate=target;}
+      
+      m.SetMathHandler((msg,result)=>
+      {Console.writeline("message:{0},Result:(1}",msg,result);});
+      
+      
+      //0个参数
+      public delegate string VerySimple0elegate（）；
+      //你可以这样处理调用的结果：
+      //在控制台输出"Enjoy your string！"
+      verysimplebelegate d =new verysinpleelegate（（）=>{return"Enjoy your stringl"；}）；
+          Console.Writeline（d.Invoke（））；
+```
+
+
+
