@@ -27,6 +27,9 @@
 :arrow_double_up:<a href="#title">返回目录</a>
 
 ### 数据提供程序
+ADO-Active Data Object,ADO.NET已经远远超越了ADO这三个字母的概念。
+
+
 
 
 
