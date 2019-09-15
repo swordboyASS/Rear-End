@@ -16,4 +16,13 @@
 
 #### :file_folder:[高级语言特性](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7.md)
 
+#### :file_folder:[LINQ](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/LINQ.md)
+
+#### :file_folder:[对象的生命周期]()
+
+####   ----------- .NET程序集编程 -----------
+#### :file_folder:[.NET程序集入门]()
+#### :file_folder:[类型反射、晚期绑定、基于特性的编程]()
+
+
 
