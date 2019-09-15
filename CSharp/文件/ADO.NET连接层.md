@@ -1,85 +1,50 @@
+<a  id="top" href="#top">:collision:ADO.NET连接层:collision: </a>
 
-<p id="title"></p>
 
-## 目录
+- [x] :sunflower:` <a href="#01">数据提供程序</a>`
 
-:arrow_down:<a href="#01">数据提供程序</a>
+- [x] :sunflower:`<a href="#02">System.Data命名空间的类型</a>`
 
-:arrow_down:<a href="#02">System.Data命名空间的类型</a>
+- [x] :sunflower:`<a href="#03">创建AutoLot数据库</a>`
 
-:arrow_down:<a href="#03">创建AutoLot数据库</a>
+- [x] :sunflower:`<a href="#04">工厂模型</a>`
 
-:arrow_down:<a href="#0">工厂模型</a>
+- [x] :sunflower:`<a href="#05">连接层</a>`
 
-:arrow_down:<a href="#0">连接层</a>
+- [x] :sunflower:`<a href="#06">构建可重用的数据访问库</a>`
 
-:arrow_down:<a href="#0">构建可重用的数据访问库</a>
+- [x] :sunflower:`<a href="#07">创建控制台UI前端</a>`
 
-:arrow_down:<a href="#0">创建控制台UI前端</a>
-
-:arrow_down:<a href="#0">数据库事物</a>
+- [x] :sunflower:`<a href="#08">数据库事物</a>`
 
 
 
 
-<p id="01"></p>
+#### &nbsp;&nbsp;数据提供程序 <a id="01"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 数据提供程序
 ADO-Active Data Object,ADO.NET已经远远超越了ADO这三个字母的概念。
 
 
 
+#### &nbsp;&nbsp; System.Data命名空间的类型<a id="02"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
-<p id="02"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### System.Data命名空间的类型
+#### &nbsp;&nbsp; 创建AutoLot数据库<a id="03"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
+#### &nbsp;&nbsp; 工厂模型<a id="04"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
-<p id="03"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 创建AutoLot数据库
+#### &nbsp;&nbsp; 连接层<a id="05"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
+#### &nbsp;&nbsp; 构建可重用的数据访问库<a id="06"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
-<p id="04"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 工厂模型
+#### &nbsp;&nbsp; 创建控制台UI前端<a id="07"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
-<p id="0"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 连接层
-
-
-
-<p id="0"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 构建可重用的数据访问库
-
-
-
-
-<p id="0"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 创建控制台UI前端
+#### &nbsp;&nbsp; 数据库事物<a id="08"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
 
@@ -87,10 +52,5 @@ ADO-Active Data Object,ADO.NET已经远远超越了ADO这三个字母的概念�
 
 
 
-<p id="0"></p>
-
-:arrow_double_up:<a href="#title">返回目录</a>
-
-### 数据库事物
 
 
