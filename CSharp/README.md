@@ -31,9 +31,9 @@
 
 ####   ----------- ADO.NET -----------
 
-#### :file_folder:[1:连接层]()
+#### :file_folder:[1:连接层](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/ADO.NET%E8%BF%9E%E6%8E%A5%E5%B1%82.md)
 
-#### :file_folder:[2:断开连接层]()
+#### :file_folder:[2:断开连接层](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/ADO.NET%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E5%B1%82.md)
 
-#### :file_folder:[3:Entity Framework]()
+#### :file_folder:[3:Entity Framework](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/ADO.NETEnityFramework.md)
 
