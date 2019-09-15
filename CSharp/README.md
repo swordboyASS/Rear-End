@@ -18,11 +18,13 @@
 
 #### :file_folder:[LINQ](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/LINQ.md)
 
-#### :file_folder:[对象的生命周期]()
+#### :file_folder:[对象的生命周期](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)
 
 ####   ----------- .NET程序集编程 -----------
-#### :file_folder:[.NET程序集入门]()
-#### :file_folder:[类型反射、晚期绑定、基于特性的编程]()
+
+#### :file_folder:[.NET程序集入门](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/.NET%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%85%A5%E9%97%A8.md)
+
+#### :file_folder:[类型反射、晚期绑定、基于特性的编程](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/%E7%B1%BB%E5%9E%8B%E5%8F%8D%E5%B0%84.md)
 
 
 
