@@ -53,14 +53,58 @@ namespace Programe
             {
                 // Creating Connection--关于integrated security设置的说明再相同目录下我有说明。  
                 con = new SqlConnection("data source=.; database=student; integrated security=SSPI");
-                // writing sql query  
+                // 创建一个sql表 ，有2个参实第一个参数是sql语句，第二个参数是应用的连接对象。 
                 SqlCommand cm = new SqlCommand("create table student_info(id int not null,name varchar(100), email varchar(50), join_date date)", con);  
+                // 打开连接  
+                con.Open();
+                // 执行sql查询  
+                cm.ExecuteNonQuery();
+                // 打印一条消息 
+                Console.WriteLine("Table created Successfully");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, something went wrong." + e);
+            }
+            //关闭连接  
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
+}
+```
+
+* `插入一条数据`
+```csharp
+using System;
+using System.Data.SqlClient;
+
+namespace AdoNetConsoleApplication
+{
+    class AdoNetInsert
+    {
+        static void Main(string[] args)
+        {
+            new AdoNetInsert().InsertTable();
+        }
+        public void InsertTable()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creating Connection  
+                con = new SqlConnection("data source=.; database=student; integrated security=SSPI");
+                // writing sql query  
+                String sql = "insert into student_info(id, name, email, join_date)values('101', 'Hiniu Su', 'hinew.su@example.com', '2017-11-18')";
+                SqlCommand cm = new SqlCommand(sql, con); 
                 // Opening Connection  
                 con.Open();
                 // Executing the SQL query  
                 cm.ExecuteNonQuery();
                 // Displaying a message  
-                Console.WriteLine("Table created Successfully");
+                Console.WriteLine("插入数据记录成功~！");
             }
             catch (Exception e)
             {
@@ -76,7 +120,108 @@ namespace Programe
 }
 ```
 
+* `查询/检索记录`
+```csharp
+using System;
+using System.Data.SqlClient;
 
+namespace AdoNetConsoleApplication
+{
+
+    class AdoNetSelect
+    {
+        static void Main(string[] args)
+        {
+            new AdoNetSelect().SelectTable();
+        }
+        public void SelectTable()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creating Connection  
+                con = new SqlConnection("data source=.; database=student; integrated security=SSPI");
+                // writing sql query  
+                SqlCommand cm = new SqlCommand("SELECT * FROM student_info", con);
+                // Opening Connection  
+                con.Open();
+                // Executing the SQL query  
+                SqlDataReader sdr = cm.ExecuteReader();
+                Console.WriteLine("当前 student_info 表中的记录为：" );
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    Console.WriteLine(sdr["id"] + " " + sdr["name"] + " " + sdr["email"]); // Displaying Record  
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, something went wrong.\n" + e);
+            }
+            // Closing the connection  
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
+}
+```
       
+* `删除记录`
+```csharp
+using System;
+using System.Collections.Generic;
+using System;
+using System.Data.SqlClient;
 
+namespace AdoNetConsoleApplication
+{
+
+    class AdoNetDelete
+    {
+        static void Main(string[] args)
+        {
+            new AdoNetDelete().DeleteFromTable();
+        }
+        public void DeleteFromTable()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creating Connection  
+                con = new SqlConnection("data source=.; database=student; integrated security=SSPI");
+                // writing sql query  
+                SqlCommand cm = new SqlCommand("delete from student_info where id = '101'", con);
+                // Opening Connection  
+                con.Open();
+                // Executing the SQL query  
+                cm.ExecuteNonQuery();
+
+                Console.WriteLine("已经成功地删除了编号为：101 的学生数据信息~！");
+
+                // 重新查询数据库中的记录信息
+                SqlCommand cm2 = new SqlCommand("SELECT * FROM student_info", con);
+                // Executing the SQL query  
+                SqlDataReader sdr = cm2.ExecuteReader();
+                Console.WriteLine("当前 student_info 表中的记录为：");
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    Console.WriteLine(sdr["id"] + " " + sdr["name"] + " " + sdr["email"]); // Displaying Record  
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, something went wrong.\n" + e);
+            }
+            // Closing the connection  
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
+}
+```
 
