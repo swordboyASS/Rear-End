@@ -3,12 +3,12 @@
 
 - [x] <a href="#01">`什么是ADO.NET`</a>:sunflower:
 - [x] <a href="https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/%E6%96%87%E4%BB%B6/Integrated%20Security%3DSSPI%EF%BC%8Cture%EF%BC%8Cfalse%E7%9A%84%E8%AF%B4%E6%98%8E.md">`integrated security`<a>:sunflower:
-- [x] <a href="#03">``</a>:sunflower:
-- [x] <a href="#04">``</a>:sunflower:
-- [x] <a href="#05">``</a>:sunflower:
-- [x] <a href="#06">``</a>:sunflower:
-- [x] <a href="#07">``</a>:sunflower:
-- [x] <a href="#08">``</a>:sunflower:
+- [x] <a href="#03">`ADO.NET SqlConnection类`</a>:sunflower:
+- [x] <a href="#04">`ADO.NET SqlCommand类`</a>:sunflower:
+- [x] <a href="#05">`ADO.NET SqlDataReader类`</a>:sunflower:
+- [x] <a href="#06">`ADO.NET DataSet类`</a>:sunflower:
+- [x] <a href="#07">`ADO.NET DataAdapter类`</a>:sunflower:
+- [x] <a href="#08">`ADO.NET DataTable类`</a>:sunflower:
 
 #### &nbsp;&nbsp;<a id="01">什么是ADO.NET</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 * `1.什么是ADO.NET`
@@ -224,4 +224,88 @@ namespace AdoNetConsoleApplication
     }
 }
 ```
+
+
+#### &nbsp;&nbsp; <a id="02"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+
+
+
+#### &nbsp;&nbsp; <a id="03"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+* ``
+
+#### &nbsp;&nbsp; <a id="04"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+
+
+#### &nbsp;&nbsp; <a id="05"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+
+
+#### &nbsp;&nbsp; <a id="06"> DataSet</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+`ADO.Net`的`DataSet`类包含数据的数据表集合。它用于在不与数据源交互的情况下获取数据，这就是为什么它也被称为断开数据访问方法。这是一个内存数据存储，可以同时容纳多个表。可以使用`DataRelation`对象来关联这些表。 `DataSet`也可以用来读写XML文档中的数据。   
+ADO.NET提供了一个可用于创建DataSet对象的DataSet类。它包含执行数据相关操作的构造函数和方法。
+
+* `DataSet类构造函数`
+
+|构造函数|作用|
+|:--|:--|
+|DataSet()|它用于初始化DataSet类的新实例。|
+DataSet(String)|它用于使用给定名称初始化DataSet类的新实例。
+DataSet(SerializationInfo, StreamingContext)|它用于初始化具有给定序列化信息和上下文的DataSet类的新实例。
+DataSet(SerializationInfo, StreamingContext, Boolean)|它用于初始化DataSet类的新实例。
+
+* `DataSet类属性`
+
+|属性|作用|
+|:--|:--|
+CaseSensitive|它用于检查DataTable对象是否区分大小写。
+DataSetName|它用于获取或设置当前DataSet的名称。
+DefaultViewManager|它用于获取DataSet中包含的数据的自定义视图，以允许过滤和搜索。
+HasErrors|它用于检查此DataSet中的任何DataTable对象中是否有错误。
+IsInitialized|它用于检查DataSet是否被初始化。
+Locale|它用于获取或设置用于比较表中字符串的语言环境信息。
+Namespace|它用于获取或设置DataSet的名称空间。
+Site|它用于获取或设置DataSet的ISite。
+Tables|它用于获取DataSet中包含的表的集合。
+
+|方法|作用|
+|:--|:--|
+BeginInit()|它用于在窗体上使用的DataSet的初始化。
+Clear()|它用于通过删除所有表中的所有行来清除任何DataSet中的数据。
+Clone()|它用于复制DataSet的结构。
+Copy()|它用于复制此DataSet的结构和数据。
+CreateDataReader(DataTable[])|它将为每个DataTable返回一个带有一个结果集的DataTableReader。
+CreateDataReader()|它将为每个DataTable返回一个带有一个结果集的DataTableReader。
+EndInit()|它结束在窗体上使用的DataSet的初始化。
+GetXml()|它返回存储在DataSet中的数据的XML表示形式。
+GetXmlSchema()|它返回存储在DataSet中的数据的XML表示的XML Schema。
+Load(IDataReader, LoadOption, DataTable[])|它用于使用提供的IDataReader从数据源填充数据集。
+Merge(DataSet)|它用于将指定的DataSet及其模式合并到当前的DataSet中。
+Merge(DataTable)|它用于将指定的DataTable及其模式合并到当前的DataSet中。
+ReadXml(XmlReader, XmlReadMode)|它用于使用指定的XmlReader和XmlReadMode将XML模式和数据读入DataSet。
+Reset()|它用于清除所有表，并从DataSet中删除所有关系，外部约束和表。
+WriteXml(XmlWriter, XmlWriteMode)|它用于使用指定的XmlWriter和XmlWriteMode编写DataSet的当前数据和可选的模式。
+
+
+#### &nbsp;&nbsp; <a id="07">DataAdapter</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+DataAdapter类作为DataSet和数据源之间的桥梁来检索数据。 DataAdapter是一个代表一组SQL命令和一个数据库连接的类。它可以用来填充数据集并更新数据源。
+* `DataAdapter构造函数`
+
+|构造函数|作用|
+DataAdapter()|它用于初始化DataAdapter类的新实例。
+DataAdapter(DataAdapter)|它用于从相同类型的现有对象初始化DataAdapter类的新实例。
+
+
+|方法|作用|
+|:--|:--|
+CloneInternals()|它用于创建DataAdapter的这个实例的副本。
+Dispose(Boolean)|它用于释放DataAdapter使用的非托管资源。
+FillSchema(DataSet, SchemaType, String, IDataReader)|它用于将DataTable添加到指定的DataSet。
+GetFillParameters()|它用于在执行SQL SELECT语句时获取用户设置的参数。
+ResetFillLoadOption()|它用于将FillLoadOption重置为默认状态。
+ShouldSerializeAcceptChangesDuringFill()|它确定是否应该保持AcceptChangesDuringFill属性。
+ShouldSerializeFillLoadOption()|它确定是否应该保持FillLoadOption属性。
+ShouldSerializeTableMappings()|它确定是否存在一个或多个DataTableMapping对象。
+Update(DataSet)|它用于调用相应的INSERT，UPDATE或DELETE语句。
+
+#### &nbsp;&nbsp; <a id="08">DataTable</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+DataTable类将关系数据表示为表格形式。ADO.NET提供了一个DataTable类来独立创建和使用数据表。它也可以和DataSet一起使用。 最初，当创建DataTable时，它没有表模式。我们可以通过向表中添加列和约束来创建表模式。在定义表模式之后，可以向表中添加行。
 
