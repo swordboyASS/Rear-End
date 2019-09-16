@@ -226,14 +226,143 @@ namespace AdoNetConsoleApplication
 ```
 
 
-#### &nbsp;&nbsp; <a id="02"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+#### &nbsp;&nbsp; <a id="02">SqlConnection类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+SqlConnection类用于建立到SQL Server数据库的开放连接。这是一个封闭的类，所以不能被继承。连接到Microsoft SQL Server数据库时，SqlConnection类与SqlDataAdapter和SqlCommand类一起使用来提高性能。
+即使连接超出范围，连接也不会明确关闭。 因此，在代码中必须通过调用Close()方法显式关闭连接。
+
+
+SqlConnection类构造函数
+
+|构造函数|作用|
+|:--|:--|
+SqlConnection()|它用于初始化SqlConnection类的新实例。
+SqlConnection(String)|它用于初始化SqlConnection类的新实例，并将连接字符串作为参数。
+SqlConnection(String, SqlCredential)|它用于初始化一个带有两个参数的SqlConnection类的新实例。首先是连接字符串，其次是SQL凭据。
 
 
 
-#### &nbsp;&nbsp; <a id="03"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
-* ``
+SqlConnection类的方法
+
+|方法|作用|
+|:--|:--|
+BeginTransaction()|它用于启动数据库事务。
+ChangeDatabase(String)|它用于更改当前数据库以打开SqlConnection。
+ChangePassword(String, String)|它会更改连接字符串中指示的用户的SQL Server密码。
+Close()|它用于关闭与数据库的连接。
+CreateCommand()|它作为分布式事务在指定的事务中使用。
+GetSchema()|它返回这个SqlConnection的数据源的模式信息。
+Open()|它用来打开数据库连接。
+ResetStatistics()|如果启用统计信息收集，它会重置所有值。
+
+```
+using (SqlConnection connection = new SqlConnection(connectionString))    
+{    
+  connection.Open();         
+}
+```
+代码中的using块可以自动关闭连接。所以不需要明确地调用close()方法来关闭数据库的连接，using块代码会在代码退出时隐式执行。
+
+
+* `实例演示`
+```
+using System;
+using System.Data.SqlClient;
+
+namespace SqlConnectionApp
+{
+    class TestConnection
+    {
+        static void Main(string[] args)
+        {
+            new TestConnection().Connecting();
+        }
+        public void Connecting()
+        {
+            using (
+                     // Creating Connection  
+                     SqlConnection con = new SqlConnection("data source=.; database=student; integrated security=SSPI")
+                 )
+            {
+                con.Open();
+                Console.WriteLine("建立与SQL Server数据库的连接成功~！");
+            }
+        }
+    }
+}
+```
+
+
+
+
+#### &nbsp;&nbsp; <a id="03">SqlCommand类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+ADO.Net的SqlCommand类用于存储和执行SQL Server数据库的SQL语句。这是一个封闭的类，所以不能被继承。
+
+* `SqlCommand类构造函数`
+
+|:构造函数|作用|
+|:--|:--|
+public SqlCommand();|它用于初始化SqlCommand类的新实例。
+public SqlCommand(string cmdText);|它用于使用字符串参数初始化SqlCommand类的新实例。
+public SqlCommand(string cmdText, SqlConnection connection);| 它用于使用字符串参数初始化SqlCommand类的新实例。第二个参数，传入要操作的sql对象。 
+public SqlCommand(string cmdText, SqlConnection connection, SqlTransaction transaction);|它用于初始化SqlCommand类的新实例。它分别使用三个参数查询，连接和事务字符串。
+public SqlCommand(string cmdText, SqlConnection connection, SqlTransaction transaction, SqlCommandColumnEncryptionSetting columnEncryptionSetting);|它使用指定的命令文本，连接，事务和加密设置来初始化SqlCommand类的新实例。
+
+* `SqlCommand类方法`
+
+|方法|作用|
+|:--|:--|
+BeginExecuteNonQuery()|它用于启动由此SqlCommand描述的SQL语句的异步执行。
+Cancel()|它试图取消一个SqlCommand的执行。
+Clone()|它创建一个新的SqlCommand对象，它是当前实例的一个副本。
+CreateParameter()|它创建一个SqlParameter对象的新实例。
+ExecuteReader()|它用于将CommandText发送给Connection并构建一个SqlDataReader。
+ExecuteXmlReader()|它用于将CommandText发送给Connection并构建一个XmlReader对象。
+ExecuteScalar()|它执行查询并返回结果集中第一行的第一列，其他列或行将被忽略。
+Prepare()|它用于通过使用SQL Server的实例来创建准备好的命令版本。
+ResetCommandTimeout()|它用于将CommandTimeout属性重置为默认值。
+
+
 
 #### &nbsp;&nbsp; <a id="04"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+* `SqlDataReader类的属性`
+
+|属性|作用|
+|:--|:--|
+Connection|它用于获取与SqlDataReader关联的SqlConnection。
+Depth|它被用来获取一个表示当前行的嵌套深度的值。
+FieldCount|它用于获取当前行中的列数。
+HasRows|它用于获取一个值，该值指示SqlDataReader是否包含一行或多行
+IsClosed|它用于检索布尔值，该值指示指定的SqlDataReader实例是否已关闭。
+Item[String]|它用于以给定列名称的原始格式获取指定列的值。
+Item[Int32]|它用于以给定列序号的原始格式获取指定列的值。
+RecordsAffected|它用于通过执行Transact-SQL语句来获取更改，插入或删除的行数。
+VisibleFieldCount|它用于获取SqlDataReader中未隐藏的字段数。
+
+
+
+* `SqlDataReader类的方法`
+
+|方法|作用|
+|:--|:--|
+Close()|它用于关闭SqlDataReader对象。
+GetBoolean(Int32)|它用于以布尔值的形式获取指定列的值。
+GetByte(Int32)|它用于获取指定列的值作为一个字节。
+GetChar(Int32)|它用于获取指定列的值作为单个字符.
+GetDateTime(Int32)|它用于获取指定列的值作为DateTime对象。
+GetDecimal(Int32)|它用于获取指定列的值作为Decimal对象。
+GetDouble(Int32)|它用于获取指定列的值作为双精度浮点数。
+GetFloat(Int32)|它用于获取指定列的值作为单精度浮点数。
+GetName(Int32)|它用于获取指定列的名称。
+GetSchemaTable()|它用于获取描述SqlDataReader的列元数据的DataTable对象。
+GetValue(Int32)|它用于以本机格式获取指定列的值。
+GetValues(Object[])|它用于使用当前行的列值填充对象数组。
+NextResult()|当读取SQL语句的结果时，它用来获得下一个结果。
+Read()|它用于从SQL Server数据库中读取记录。
+
+
+
+要创建一个SqlDataReader实例，则必须调用SqlCommand对象的ExecuteReader方法。
+
 
 
 #### &nbsp;&nbsp; <a id="05"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
@@ -308,4 +437,28 @@ Update(DataSet)|它用于调用相应的INSERT，UPDATE或DELETE语句。
 
 #### &nbsp;&nbsp; <a id="08">DataTable</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 DataTable类将关系数据表示为表格形式。ADO.NET提供了一个DataTable类来独立创建和使用数据表。它也可以和DataSet一起使用。 最初，当创建DataTable时，它没有表模式。我们可以通过向表中添加列和约束来创建表模式。在定义表模式之后，可以向表中添加行。
+* `DataTable构造函数`
+
+|构造函数|作用|
+|:--|:--|
+DataTable()|它用于初始化没有参数的DataTable类的新实例。
+DataTable(String)|它用于使用指定的表名初始化DataTable类的新实例。
+DataTable(SerializationInfo, StreamingContext)|它用于使用SerializationInfo和StreamingContext初始化DataTable类的新实例。
+DataTable(String, String)|它用于使用指定的表名和名称空间初始化DataTable类的新实例。
+
+* `DataTable属性`
+
+|属性|作用|
+|:--|:--|
+Columns|它用于获取属于此表的列的集合。
+Constraints|它被用来获取由这个表维护的约束的集合。
+DataSet|它用于获取此表所属的DataSet。
+DefaultView|它用于获取可能包含过滤视图的表的自定义视图。
+HasErrors|它用于获取指示DataSet表中的任何行中是否存在错误的值。
+MinimumCapacity|它用于获取或设置此表的初始起始大小。
+PrimaryKey|它用于获取或设置一个用作数据表主键的列数组。
+Rows|它用于获取属于此表的行的集合。
+TableName|它用于获取或设置DataTable的名称。
+
+
 
