@@ -226,7 +226,7 @@ namespace AdoNetConsoleApplication
 ```
 
 
-#### &nbsp;&nbsp; <a id="02">SqlConnection类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+#### &nbsp;&nbsp; <a id="03">SqlConnection类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 SqlConnection类用于建立到SQL Server数据库的开放连接。这是一个封闭的类，所以不能被继承。连接到Microsoft SQL Server数据库时，SqlConnection类与SqlDataAdapter和SqlCommand类一起使用来提高性能。
 即使连接超出范围，连接也不会明确关闭。 因此，在代码中必须通过调用Close()方法显式关闭连接。
 
@@ -294,7 +294,7 @@ namespace SqlConnectionApp
 
 
 
-#### &nbsp;&nbsp; <a id="03">SqlCommand类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+#### &nbsp;&nbsp; <a id="04">SqlCommand类</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 ADO.Net的SqlCommand类用于存储和执行SQL Server数据库的SQL语句。这是一个封闭的类，所以不能被继承。
 
 * `SqlCommand类构造函数`
@@ -323,7 +323,7 @@ ResetCommandTimeout()|它用于将CommandTimeout属性重置为默认值。
 
 
 
-#### &nbsp;&nbsp; <a id="04"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+#### &nbsp;&nbsp; <a id="05"> SqlDataReader</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 * `SqlDataReader类的属性`
 
 |属性|作用|
@@ -360,12 +360,8 @@ NextResult()|当读取SQL语句的结果时，它用来获得下一个结果。
 Read()|它用于从SQL Server数据库中读取记录。
 
 
-
 要创建一个SqlDataReader实例，则必须调用SqlCommand对象的ExecuteReader方法。
 
-
-
-#### &nbsp;&nbsp; <a id="05"> </a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
 
 #### &nbsp;&nbsp; <a id="06"> DataSet</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
