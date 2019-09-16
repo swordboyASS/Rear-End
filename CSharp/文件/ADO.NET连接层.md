@@ -33,8 +33,50 @@
 >>        DataSet:内存小型数据库，用于临时存储数据。
 >>        DataTable:数据表，用来临时存储数据，传送数据，操作数据。
 
+* `连接数据库并创建一张表`
+```csharp
+using System;
+using System.Data.SqlClient;
+
+namespace Programe
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            new Program().CreateTable();
+        }
+        public void CreateTable()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creating Connection--关于integrated security设置的说明再相同目录下我有说明。  
+                con = new SqlConnection("data source=.; database=student; integrated security=SSPI");
+                // writing sql query  
+                SqlCommand cm = new SqlCommand("create table student_info(id int not null,name varchar(100), email varchar(50), join_date date)", con);  
+                // Opening Connection  
+                con.Open();
+                // Executing the SQL query  
+                cm.ExecuteNonQuery();
+                // Displaying a message  
+                Console.WriteLine("Table created Successfully");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, something went wrong." + e);
+            }
+            // Closing the connection  
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
+}
+```
 
 
-
+      
 
 
