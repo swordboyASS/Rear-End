@@ -47,7 +47,7 @@ SqlConnection  conn  =  new  SqlConnection(  “  uid=sa;pwd=passwords;initial  
 因为实例名2000和2005的默认的是一样的 所以2005的实例肯定不能用Data Source=.表示 
 
 查看sql2005的实例名 将Data Source=.\SQLEXPRESS 中的 SQLEXPRESS用你的新实例名替换掉。
-![01]()
+![01](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/Picture/01.png)
  
 
 
@@ -63,9 +63,9 @@ VS2008其实已经自带了数据库,以及数据库驱动了,平时的开发调
 安装微软的SQL Server Management Studio Express就可以操作数据库了.
 
 启用SA方法如下,开启MSE,用windows验证登陆,
-![02]()
-![03]()
-![04]()
+![02](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/Picture/02.png)
+![03](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/Picture/03.png)
+![04](https://github.com/swordboyASS/Rear-end-Learing/blob/master/CSharp/Picture/04.png)
  
 
 
