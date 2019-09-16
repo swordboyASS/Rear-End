@@ -111,7 +111,7 @@
 ```
 
 #### &nbsp;&nbsp; <a id="04">应用到集合对象</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
-* 汽车类
+* `汽车类`
 ```csharp
     class Car
     {
@@ -121,11 +121,11 @@
         public string Make { get; set; }
     }
 ```
-* 初始化
+* `初始化--查询泛型集合`
 ```csharp
     class Program
     {
-        //查询泛型集合
+        
         static void GetFastCar(List<Car> car)
         {
             var fastCar = from i in car where i.Speed>90 && i.Make == "BMW" select i;
@@ -152,9 +152,131 @@
 
     }
 ```
+* `初始化--查询非泛型集合`  
+延用了上述的Car类
+```csharp
+            //对象初始化语法，生成一系列Car对象
+            ArrayList myCars = new ArrayList()
+            {
+            new Car {PetName="Henry",Color="Silver",Speed=100 ,Make ="BMW" },
+            new Car { PetName = "Daisy", Color = "Tan", Speed = 90, Make ="BMW" },
+            new Car { PetName = "Mary", Color = "Black", Speed =55 , Make ="VW" },
+            new Car { PetName = "Clunker", Color = "Rust", Speed =5 , Make ="Yugo" },
+            new Car { PetName = "Melvin", Color = "White", Speed =43 , Make ="Ford" }
+            };
+            //把 myCars转换成一个兼容IEnumberale<T>的类型
+            var myCarsEnum = myCars.OfType<Car>();
 
+            //建立兼容的LINQ表达式
+            var fastCars = from i in myCarsEnum where i.Speed > 56 select i;
+            foreach (var item in fastCars)
+            {
+                Console.WriteLine(item);
+            }
+```
+* `使用OfType<T>()筛选数据`
+        
+```csharp
+               //使用OfType<T>()筛选数据
+            ArrayList arrayList = new ArrayList();
+            arrayList.AddRange(new object[] { 10, 20, 50, false, new Car(), "string" });
+            var choose = arrayList.OfType<int>();
+            foreach (var item in choose)
+            {
+                Console.WriteLine(item);// 10, 20 ,50
+            }     
+```       
 
 #### &nbsp;&nbsp; <a id="05">查询操作符</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
+* `各种查询操作符`
+
+|查询操作符|含义|
+|:--|:--|
+from、in|用于定义任何LINQ表达式的主干，允许从合适的容器中提取数据子集
+where|用于定义从一个容器里取出哪些项的限制条件
+select|用于从容器中选择一个序列
+join、on、equals、into|基于指定的键来做关联操作。记住，这些“关联”不必与关系数据库的数据有什么关系
+orderby、ascending、descending |允许结果子集按升序或降序排序
+group、by|用特定的值来对数据分组后得到一个子集
+
+`基本语法模板` `var resule = from matchingItem in container where BooleanExpression select machingItem`
+
+* `投影新数据类型` 了解即可
+```csharp
+        //动态生成一个匿名类型，得到只有描述和名称的结果。
+        var result = from p in products select new {p.Name,p.Speed}
+        //使用数组转换方法,才能正确的使用
+        result.ToArray();
+        
+```
+
+* `获取总数`-Count()方法
+* `反转结果集`-Reverse<T>()方法
+        
+* `对表达式进行排序`        
+```csharp
+        static void Main(string[] args)
+        {
+            //对象初始化语法，生成一系列Car对象
+            List<Car> myCars = new List<Car>()
+            {
+            new Car {PetName="Henry",Color="Silver",Speed=100 ,Make ="BMW" },
+            new Car { PetName = "Daisy", Color = "Tan", Speed = 90, Make ="BMW" },
+            new Car { PetName = "Mary", Color = "Black", Speed =55 , Make ="VW" },
+            new Car { PetName = "Clunker", Color = "Rust", Speed =5 , Make ="Yugo" },
+            new Car { PetName = "Melvin", Color = "White", Speed =43 , Make ="Ford" }
+            };
+            var result = from i in myCars orderby i.PetName select i;
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+                //按PetName字母顺序进行排序。正序，从小到大
+                //PetName = Clunker,Color = Rust,Speed = 5,Company = Yugo
+                //PetName = Daisy,Color = Tan,Speed = 90,Company = BMW
+                //PetName = Henry,Color = Silver,Speed = 100,Company = BMW
+                //PetName = Mary,Color = Black,Speed = 55,Company = VW
+                //PetName = Melvin,Color = White,Speed = 43,Company = Ford
+            }
+
+
+        Console.ReadLine();
+        }
+```
+
+* `韦恩图工具`
+
+|方法|作用|
+|:--|:--|
+Except |对称差
+Intersect |交集
+Union |并集
+Concat| 连接
+
+```csharp
+            List<string> person1 = new List<string> { "gaoju", "sichuan", "chengdu" };
+            List<string> person2 = new List<string> { "chengdu", "sichuan", "BBC" };
+            var result = (from i in person1 select i).Except(from i in person2 select i);
+            var result2 = (from i in person1 select i).Intersect(from i in person2 select i);
+            var result3 = (from i in person1 select i).Union(from i in person2 select i);
+            var result4 = (from i in person1 select i).Concat(from i in person2 select i);
+            foreach (var item in result4)
+            {
+                Console.WriteLine(item);
+            }
+```
+`有时候通过Concat（）获得的有重复` `使用Distinct()方法去掉重复`
+
+*  `LINQ聚合操作`
+
+|方法|作用|
+|:--|:--|
+Count |元素个数
+Average |平均值
+Max |最大值
+Min |最小值
+Sum |求和
+
+
 
 
 #### &nbsp;&nbsp; <a id="06">内部表示</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
