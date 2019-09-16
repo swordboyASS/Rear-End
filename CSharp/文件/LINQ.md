@@ -280,7 +280,7 @@ Sum |求和
 
 
 #### &nbsp;&nbsp; <a id="06">内部表示</a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
-
+* `这部分相较于上述方法来说更为复杂`--有用到再来学
 
 #### &nbsp;&nbsp; <a id="07"></a>:flags:<a href="#top">顶部</a>:arrow_upper_left:
 
