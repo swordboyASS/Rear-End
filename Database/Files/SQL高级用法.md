@@ -482,3 +482,24 @@ WHERE condition
 ###### 视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。
 
  
+`更新视图`
+```sql
+CREATE OR REPLACE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+```
+
+`撤销视图`
+```sql
+DROP VIEW view_name
+```
+
+* **`日期`**
+
+
+
+
+
+
+
