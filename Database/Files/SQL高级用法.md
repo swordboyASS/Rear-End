@@ -506,7 +506,7 @@ DROP VIEW view_name
 
 
 
-* **`SQL Server数据类型`**
+* **`SQL Server数据类型`**     
 [SQLServer数据类型](https://www.runoob.com/sql/sql-datatypes.html)
 
 
