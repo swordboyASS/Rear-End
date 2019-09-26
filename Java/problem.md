@@ -207,3 +207,33 @@ public class Test {
    }
 }
 ```
+
+* **`字符串问题`**
+1、java中字符串的比较：==
+
+我们经常习惯性的写上if(str1==str2)，这种写法在java中可能会带来问题
+
+`example1:`   
+
+`String a="abc";String b="abc"`
+那么a==b将返回true。因为在java中字符串的值是不可改变的，相同的字符串在内存中只会存一份，所以a和b指向的是同一个对象，所以可以共享；
+
+`example2：`
+
+`String a=new String("abc"); String b=new String("abc");`
+ 那么a==b将返回false，此时a和b指向不同的对象。
+
+ 2、用equals方法比较的是字符串的内容是否相同，
+
+`example：`
+
+```java
+String a=new String("abc"); 
+String b=new String("abc");
+ a.equals(b);
+ ```
+将返回true。
+
+3. CompareTo()方法比较字符串
+
+该比较基于字符串中各个字符的 Unicode 值,如果按字典顺序此 String 对象位于参数字符串之前，则比较结果为一个负整数。如果按字典顺序此 String 对象位于参数字符串之后，则比较结果为一个正整数。如果这两个字符串相等，则结果为 0；compareTo 只在方法 equals(Object) 返回 true 时才返回 0。
