@@ -8,3 +8,7 @@
 :file_folder:[.bak文件](https://github.com/swordboyASS/Rear-end-Learing/blob/master/Database/Files/.bak%E6%96%87%E4%BB%B6.md)
 
 :file_folder:[T-SQL](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/T-SQL.md)
+
+:file_folder:[时间函数](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0.md)
+
+
