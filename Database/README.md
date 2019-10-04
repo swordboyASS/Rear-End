@@ -11,4 +11,4 @@
 
 :file_folder:[时间函数](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0.md)
 
-:file_folder:[连接与联结](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E8%BF%9E%E6%8E%A5%E4%B8%8E%E8%81%94%E7%BB%93.md)
+:file_folder:[合并与联结](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E8%BF%9E%E6%8E%A5%E4%B8%8E%E8%81%94%E7%BB%93.md)
