@@ -14,3 +14,5 @@
 :file_folder:[合并与联结](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E5%90%88%E5%B9%B6%E4%B8%8E%E8%81%94%E7%BB%93.md)
 
 :file_folder:[子查询与嵌套查询](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E5%AD%90%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2.md)
+
+:file_folder:[视图](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E8%A7%86%E5%9B%BE.md)
