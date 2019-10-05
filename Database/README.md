@@ -16,3 +16,9 @@
 :file_folder:[子查询与嵌套查询](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E5%AD%90%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2.md)
 
 :file_folder:[视图](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E8%A7%86%E5%9B%BE.md)
+
+:file_folder:[存储过程](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.md)
+
+:file_folder:[触发器](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E8%A7%A6%E5%8F%91%E5%99%A8.md)
+
+:file_folder:[索引](https://github.com/swordboyASS/Rear-End/blob/master/Database/Files/%E7%B4%A2%E5%BC%95.md)
