@@ -12,7 +12,8 @@
 - [x] <a href="#08">**``**</a>
 
 ### &nbsp;&nbsp; <a id="01">什么是游标</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-[概念来源](https://blog.csdn.net/wandong0917/article/details/76168610)
+
+<a href="https://blog.csdn.net/wandong0917/article/details/76168610" target="blank">概念来源</a>
 :star: 游标是什么？
 
 游标实际上是一种能从包括多条数据记录的结果集中每次提取一条记录的机制。游标充当指针的作用。尽管游标能遍历结果中的所有行，但他一次只指向一行。
