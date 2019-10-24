@@ -1,1 +1,1 @@
-
+:file_folder: [进程、应用程序域、对象上下文](https://github.com/swordboyASS/Rear-End/blob/master/CSharp/High-Level/%E8%BF%9B%E7%A8%8B%2C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%9F%9F%EF%BC%8C%E5%AF%B9%E8%B1%A1%E4%B8%8A%E4%B8%8B%E6%96%87.md)
