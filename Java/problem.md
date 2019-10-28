@@ -1,3 +1,26 @@
+#### 下面的程序"没有输出"
+```java
+package gaoju3.demo;
+
+
+public class Hi {
+    String text=" ";
+
+    public Hi(String s) {
+        String text = s;
+//        System.out.println(text);
+    }
+
+    public static void main(String[] args) {
+        Hi wrapper = new Hi("Hello");
+        System.out.println(wrapper.text.toLowerCase());
+    }
+}
+```
+原因: 全局text赋值位空串，输出text为空，构造函数里相对全局的text赋值，但奈何构造函数里的text是它自己的局部text，不是全局的那个text，无法为全局的text赋值。导致创建对象时，传参只会为局部的text赋值。而在输出的时候却只能输出全局的那个text。
+
+
+
 #### java采用Unicode编码，可以将字符赋值汉字，同理，JavaScript、C#、php也一样。
 
 #### 一图解java的程序运行：
