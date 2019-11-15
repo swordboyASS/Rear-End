@@ -260,3 +260,27 @@ String b=new String("abc");
 3. CompareTo()方法比较字符串
 
 该比较基于字符串中各个字符的 Unicode 值,如果按字典顺序此 String 对象位于参数字符串之前，则比较结果为一个负整数。如果按字典顺序此 String 对象位于参数字符串之后，则比较结果为一个正整数。如果这两个字符串相等，则结果为 0；compareTo 只在方法 equals(Object) 返回 true 时才返回 0。
+
+4. 接收字符串
+```java
+package gaoju3.demo;
+
+
+import java.util.Scanner;
+
+public class Hi {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        if(scan.hasNextDouble()){           //这个可以用来输入但不接收，只用于判断
+            System.out.println(scan.next());    //这个可以输入同时也可以接收
+        }
+    }
+}
+
+//    用 Scanner 实现字符串的输入有两种方法，一种是next（），一种nextLine()；
+//
+//        next() 一定要读取到有效字符后才可以结束输入，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next() 方法会自动将其去掉，只有在输入有效字符之后，next()方法才将其后输入的空格键、Tab键或Enter键等视为分隔符或结束符。
+//
+//        nextLine()方法的结束符只是Enter键。
+
+```
